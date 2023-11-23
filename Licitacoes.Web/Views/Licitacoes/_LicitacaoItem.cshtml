@@ -1,0 +1,46 @@
+﻿@model Licitacoes.Core.Models.Licitacoes
+
+@{
+    ViewData["Title"] = "Item";
+}
+
+<tr class="border-b border-dashed last:border-b-0">
+    <td class="p-3 pl-0">
+        @Html.DisplayFor(model => model.LicitacaoNumber)
+    </td>
+    <td class="p-3 pl-0 flex">
+        @Html.DisplayFor(model => model.Description)
+    </td>
+    <td class="p-3 pl-0">
+        @Html.DisplayFor(model => model.DataOpening)
+    </td>
+    <td class="p-3 pl-0">
+        @Html.DisplayFor(model => model.Status)
+    </td>
+    <td class="py-2 px-4 border-b">
+        <!-- Botões de Ação Modernos -->
+        <a role="button" asp-route-id="@Model.Id" asp-action="Details" class="text-blue-500 hover:text-blue-700 focus:outline-none focus:underline mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 class="h-5 w-5 inline-block align-text-bottom">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M19 20a2 2 0 01-2 2H7a2 2 0 01-2-2V8a2 2 0 012-2h8a2 2 0 012 2v12z"></path>
+            </svg>
+        </a>
+        <a role="button" asp-route-id="@Model.Id" asp-action="Edit" class="text-yellow-500 hover:text-yellow-700 focus:outline-none focus:underline mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 class="h-5 w-5 inline-block align-text-bottom">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </a>
+        <button data-item-id="@Model.Id" id="deleteBtn" class="text-red-500 hover:text-red-700 focus:outline-none focus:underline">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 class="h-5 w-5 inline-block align-text-bottom">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </td>
+</tr>

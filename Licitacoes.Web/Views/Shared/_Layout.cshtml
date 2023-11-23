@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Licitacoes</title>
+    <script rel="stylesheet" src="~/lib/tailwind-3.3.5.js"> </script>
+    <link rel="stylesheet" href="~/Licitacoes.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="font-sans bg-gray-100">
+    <header>
+        <nav class="bg-indigo-900 p-4 flex justify-between items-center flex justify-between px-8">
+            <a asp-action="Index">
+                <span class="text-xl font-semibold text-white">Licitações</span>
+            </a>
+         
+            <a role="button" class="bg-white text-indigo-700 px-4 py-2 hover:bg-indigo-500 hover:text-white" asp-action="Create">
+                Nova Licitação
+            </a>
+        </nav>
+    </header>
+    <div class="container mx-auto">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Licitacoes.Web @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
+        </div>
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://www.unpkg.com/aspnet-client-validation/dist/aspnet-validation.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

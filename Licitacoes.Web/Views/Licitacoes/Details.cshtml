@@ -1,0 +1,40 @@
+﻿@model Licitacoes.Core.Models.Licitacoes
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
+    <div class="flex flex-row justify-between items-center p-6">
+        <div class="relative flex flex-col min-w-0 break-words bg-clip-border rounded-2xl bg-light/30">
+            <h3 class="my-4 text-gray-900 text-2xl font-bold">@Html.DisplayFor(model => model.LicitacaoNumber)</h3>
+            <ul class="flex flex-col list-none gap-8">
+                <li class="text-md text-gray-500">
+                    @Html.DisplayFor(model => model.Description)
+                </li>
+
+                <li class="text-xl text-gray-800">
+                    <p class="text-xl text-gray-500 font-semibold">
+                        @Html.DisplayNameFor(model => model.DataOpening)
+                    </p>
+                    <p class="text-xl text-gray-500 break-words">
+                        @Html.DisplayFor(model => model.DataOpening)
+                    </p>
+                </li>
+
+                <li class="text-md text-gray-500">
+                    <span class="inline-block bg-indigo-800 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        @Html.DisplayFor(model => model.Status)
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="h-auto">
+            <a role="button" asp-action="Edit" asp-route-id="@Model?.Id" class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring focus:border-indigo-700">
+                Alterar Licitação
+            </a>
+        </div>
+
+    </div>
+
+</div>
