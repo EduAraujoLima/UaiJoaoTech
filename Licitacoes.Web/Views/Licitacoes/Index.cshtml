@@ -48,7 +48,7 @@
                 .forEach(btn => {
                     const licitacaoId = btn.getAttribute('data-item-id')
                     btn.addEventListener('click', async () => {
-                        const confirmExclusion = await Swal.fire({
+                        const {isConfirmed} = await Swal.fire({
                             title: `Deseja exluir a licitacao `,
                             text: "Essa operação não poderá ser desfeita",
                             icon: "warning",
@@ -58,7 +58,8 @@
                             confirmButtonText: "Yes, delete it!"
                         })
 
-                        if (confirmExclusion) {
+
+                        if (isConfirmed) {
                             const response = await fetch(`Licitacoes/Delete/${licitacaoId}`, { method: 'DELETE' })
                             if (response.ok) {
                                 window.location.href = 'Licitacoes';
